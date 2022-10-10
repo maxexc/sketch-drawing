@@ -3,7 +3,7 @@ window.addEventListener("resize", InitApp); //При растягивании о
 function InitApp() {
   //Растягиваем холст на весь экран
   canvas.width = window.innerWidth; // * 0.9;
-  canvas.height = window.innerHeight * 0.9;
+  canvas.height = window.innerHeight; // * 0.9;
 }
 
 btnClearRef = document.querySelector(".js-clear-btn");
