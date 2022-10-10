@@ -25,19 +25,6 @@ canvas.addEventListener("touchstart", function (e) {
   btnClearRef.removeAttribute("disabled");
 }); //Начало касания
 
-// function TouchStart(e) {
-//   //Получаем текущую позицию касания
-//   touchStart = {
-//     x: e.changedTouches[0].clientX,
-//     y: e.changedTouches[0].clientY,
-//   };
-//   touchPosition = { x: touchStart.x, y: touchStart.y };
-
-//   btnClearRef.removeAttribute("disabled");
-
-//   Draw(touchPosition.x, touchPosition.y, 2, "blue"); //Рисуем точку начала касания
-// }
-
 function TouchMove(e) {
   //Получаем новую позицию
   touchPosition = {

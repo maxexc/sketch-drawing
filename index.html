@@ -9,11 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drawing</title>
     <link rel="stylesheet" href="./css/styles.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="/touches/styles/app.css" /> -->
   </head>
   <body>
     <div class="wrapper">
-      <canvas width="300" height="300" id="canvas" class="canvas"></canvas>
+      <canvas width="3000" height="3000" id="canvas" class="canvas"></canvas>
 
       <div class="info">
         <div class="info__content">
@@ -21,7 +20,14 @@
             Clear all:
             <img src="./img/icon-cross.svg" class="clearIcon" alt="clearBtn" />
           </button>
-          <b>Last action: </b> <span id="msg-box"></span>
+
+          <button
+            type="button"
+            class="js-clear-btn"
+            onclick="window.location.href = './funnyDrawing.html';"
+          >
+            NextPage
+          </button>
         </div>
       </div>
     </div>

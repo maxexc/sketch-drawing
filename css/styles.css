@@ -25,6 +25,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  /* width: 100vh;
+  height: 100vh; */
   /* margin: 0 auto; */
   outline: 1px solid pink;
   background-color: rgb(240, 255, 210);
@@ -40,6 +42,8 @@ body {
 
 .info__content {
   padding: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 button {
@@ -58,7 +62,6 @@ button {
   height: 26px;
   fill: red;
   color: inherit;
-  /* content: url("../img/icon-cross.svg"); */
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,4 +71,12 @@ button:focus {
   background-color: #188ce8;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+}
+.next-page {
+  text-decoration: none;
+  background-color: #f8ff93;
+  font-size: 16px;
+  line-height: 1.88;
+  margin-right: 0;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
 }
