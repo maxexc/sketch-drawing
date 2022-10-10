@@ -36,7 +36,7 @@ canvas.addEventListener("mousedown", function (e) {
   // context.fillStyle = color;
   context.strokeStyle = color;
   context.lineWidth = 2.0;
-  context.setLineDash;
+  // context.setLineDash;
   // context.lineJoin = round;
   console.log(context.setLineDash);
   context.moveTo(mouse.x, mouse.y);
@@ -66,6 +66,8 @@ canvas.addEventListener("touchstart", function (e) {
   touchPosition.y = e.changedTouches[0].clientY - this.offsetTop;
   draw = true;
   context.beginPath();
+  context.strokeStyle = color;
+  context.lineWidth = 2.0;
   context.moveTo(touchPosition.x, touchPosition.y);
   btnClearRef.removeAttribute("disabled");
 }); //Начало касания
@@ -75,19 +77,13 @@ canvas.addEventListener("touchmove", function (e) {
     //Получаем новую позицию
     touchPosition.x = e.changedTouches[0].clientX - this.offsetLeft;
     touchPosition.y = e.changedTouches[0].clientY - this.offsetTop;
-    console.log(touchPosition.x);
-    console.log(touchPosition.y);
+    // console.log(touchPosition.x);
+    // console.log(touchPosition.y);
 
-    context.strokeStyle = color;
-    context.lineWidth = 2.0;
     context.lineTo(touchPosition.x, touchPosition.y);
     context.stroke();
   }
-  // touchPosition = {
-  //   x: e.changedTouches[0].clientX,
-  //   y: e.changedTouches[0].clientY,
-  // };
-  // Draw(touchPosition.x, touchPosition.y, 4); //Рисуем точку текущей позиции
+
   btnClearRef.removeAttribute("disabled");
 });
 
@@ -100,6 +96,17 @@ canvas.addEventListener("touchend", function (e) {
   draw = false;
 });
 
+function onClickLink(e) {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  btnClearRef.setAttribute("disabled", true);
+}
+
+// touchPosition = {
+//   x: e.changedTouches[0].clientX,
+//   y: e.changedTouches[0].clientY,
+// };
+// Draw(touchPosition.x, touchPosition.y, 4); //Рисуем точку текущей позиции
+//
 // function Draw(x, y, weight, color = "#ff0000") {
 //   //Функция рисования точки
 //   context.fillStyle = color;
@@ -110,9 +117,3 @@ canvas.addEventListener("touchend", function (e) {
 
 //   context.fillRect(x - weightHalf, y - weightHalf, weight, weight);
 // }
-
-function onClickLink(e) {
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  btnClearRef.setAttribute("disabled", true);
-  // refs.startBtn.removeAttribute("disabled");
-}
