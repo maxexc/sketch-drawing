@@ -31,7 +31,7 @@ function TouchMove(e) {
     x: e.changedTouches[0].clientX,
     y: e.changedTouches[0].clientY,
   };
-  Draw(touchPosition.x, touchPosition.y, 5); //Рисуем точку текущей позиции
+  Draw(touchPosition.x, touchPosition.y, 4); //Рисуем точку текущей позиции
   btnClearRef.removeAttribute("disabled");
 }
 function MouseMove(e) {
@@ -41,16 +41,17 @@ function MouseMove(e) {
       y: e.clientY,
     };
   }
-  Draw(touchPosition.x, touchPosition.y, 5); //Рисуем точку текущей позиции
+  Draw(touchPosition.x, touchPosition.y, 4); //Рисуем точку текущей позиции
   btnClearRef.removeAttribute("disabled");
 }
 
 function Draw(x, y, weight, color = "#ff0000") {
   //Функция рисования точки
   ctx.fillStyle = color;
-  ctx.lineWidth = 20;
+  // ctx.lineWidth = 20;
+  // console.log(ctx);
 
-  let weightHalf = 10 * weight; // / 1;
+  let weightHalf = weight / 2; // / 1;
 
   ctx.fillRect(x - weightHalf, y - weightHalf, weight, weight);
 }
