@@ -3,8 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="true" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Drawing</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/touches/styles/app.css" /> -->
   </head>
-  <body></body>
+  <body>
+    <div class="wrapper">
+      <canvas width="300" height="300" id="canvas" class="canvas"></canvas>
+    </div>
+    <div class="info">
+      <div class="info__content">
+        <button type="button" class="js-clear-btn">
+          Clear all:
+          <img src="./img/icon-cross.svg" class="clearIcon" alt="clearBtn" />
+        </button>
+        <b>Last action: </b> <span id="msg-box"></span>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/index.js" type="module"></script>
+  </body>
 </html>
