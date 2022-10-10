@@ -14,15 +14,16 @@ console.log(btnClearRef);
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d"); // context
 
-canvas.addEventListener("touchmove", function (e) {
-  TouchMove(e);
-}); //Движение пальцем по экрану
+// canvas.addEventListener("touchmove", function (e) {
+//   TouchMove(e);
+// }); //Движение пальцем по экрану
 // canvas.addEventListener("mousemove", function (e) {
 //   MouseMove(e);
 // });
 
-var drawMouse = false;
+var draw = false;
 var mouse = { x: 0, y: 0 };
+var touchPosition = { x: 0, y: 0 };
 var color = "#ff0000";
 
 canvas.addEventListener("mousedown", function (e) {
@@ -30,7 +31,7 @@ canvas.addEventListener("mousedown", function (e) {
 
   mouse.x = e.pageX - this.offsetLeft;
   mouse.y = e.pageY - this.offsetTop;
-  drawMouse = true;
+  draw = true;
   context.beginPath();
   // context.fillStyle = color;
   context.strokeStyle = color;
@@ -42,7 +43,7 @@ canvas.addEventListener("mousedown", function (e) {
 });
 
 canvas.addEventListener("mousemove", function (e) {
-  if (drawMouse == true) {
+  if (draw == true) {
     mouse.x = e.pageX - this.offsetLeft;
     mouse.y = e.pageY - this.offsetTop;
     context.lineTo(mouse.x, mouse.y);
@@ -57,33 +58,58 @@ canvas.addEventListener("mouseup", function (e) {
   context.lineTo(mouse.x, mouse.y);
   context.stroke();
   context.closePath();
-  drawMouse = false;
+  draw = false;
 });
 
 canvas.addEventListener("touchstart", function (e) {
+  touchPosition.x = e.changedTouches[0].clientX - this.offsetLeft;
+  touchPosition.y = e.changedTouches[0].clientY - this.offsetTop;
+  draw = true;
+  context.beginPath();
+  context.moveTo(touchPosition.x, touchPosition.y);
   btnClearRef.removeAttribute("disabled");
 }); //Начало касания
 
-function TouchMove(e) {
-  //Получаем новую позицию
-  touchPosition = {
-    x: e.changedTouches[0].clientX,
-    y: e.changedTouches[0].clientY,
-  };
-  Draw(touchPosition.x, touchPosition.y, 4); //Рисуем точку текущей позиции
+canvas.addEventListener("touchmove", function (e) {
+  if (draw == true) {
+    //Получаем новую позицию
+    touchPosition.x = e.changedTouches[0].clientX - this.offsetLeft;
+    touchPosition.y = e.changedTouches[0].clientY - this.offsetTop;
+    console.log(touchPosition.x);
+    console.log(touchPosition.y);
+
+    context.strokeStyle = color;
+    context.lineWidth = 2.0;
+    context.lineTo(touchPosition.x, touchPosition.y);
+    context.stroke();
+  }
+  // touchPosition = {
+  //   x: e.changedTouches[0].clientX,
+  //   y: e.changedTouches[0].clientY,
+  // };
+  // Draw(touchPosition.x, touchPosition.y, 4); //Рисуем точку текущей позиции
   btnClearRef.removeAttribute("disabled");
-}
+});
 
-function Draw(x, y, weight, color = "#ff0000") {
-  //Функция рисования точки
-  context.fillStyle = color;
-  // context.lineWidth = 20;
-  // console.log(context);
+canvas.addEventListener("touchend", function (e) {
+  touchPosition.x = e.changedTouches[0].clientX - this.offsetLeft;
+  touchPosition.y = e.changedTouches[0].clientY - this.offsetTop;
+  context.lineTo(touchPosition.x, touchPosition.y);
+  context.stroke();
+  context.closePath();
+  draw = false;
+});
 
-  let weightHalf = weight / 2; // / 1;
+// function Draw(x, y, weight, color = "#ff0000") {
+//   //Функция рисования точки
+//   context.fillStyle = color;
+//   // context.lineWidth = 20;
+//   // console.log(context);
 
-  context.fillRect(x - weightHalf, y - weightHalf, weight, weight);
-}
+//   let weightHalf = weight / 2; // / 1;
+
+//   context.fillRect(x - weightHalf, y - weightHalf, weight, weight);
+// }
 
 function onClickLink(e) {
   context.clearRect(0, 0, canvas.width, canvas.height);
