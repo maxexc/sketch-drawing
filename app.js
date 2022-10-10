@@ -16,6 +16,22 @@ for (let i = 0; i < SQUARES_NUMBER; i++) {
   board.append(square);
 }
 
+// function setTouchColor(e) {
+//   const color = getRandomColor();
+//   // get the touch element
+//   var touch = e.touches[0];
+
+//   // get the DOM element
+//   var square = document.elementFromPoint(touch.clientX, touch.clientY);
+
+//   // make sure an element was found - some areas on the page may have no elements
+//   if (square) {
+//     // interact with the DOM element
+//     square.checked = !square.checked;
+//   } else e.style.backgroundColor = color;
+//   e.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+// }
+
 function setColor(element) {
   const color = getRandomColor();
   element.style.backgroundColor = color;
