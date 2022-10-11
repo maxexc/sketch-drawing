@@ -24,7 +24,7 @@ const context = canvas.getContext("2d"); // context
 var draw = false;
 var mouse = { x: 0, y: 0 };
 var touchPosition = { x: 0, y: 0 };
-var color = "#ff0000";
+var color = "#fffc56";
 
 canvas.addEventListener("mousedown", function (e) {
   btnClearRef.removeAttribute("disabled");
@@ -36,9 +36,15 @@ canvas.addEventListener("mousedown", function (e) {
   // context.fillStyle = color;
   context.strokeStyle = color;
   context.lineWidth = 2.0;
+
   // context.setLineDash;
   // context.lineJoin = round;
-  console.log(context.setLineDash);
+
+  // console.log(context);
+  context.shadowBlur = 5;
+  context.shadowColor = "rgba(255, 252, 86, 0.745)";
+  // color: rgba(233, 95, 95, 0.226);
+
   context.moveTo(mouse.x, mouse.y);
 });
 
@@ -48,6 +54,7 @@ canvas.addEventListener("mousemove", function (e) {
     mouse.y = e.pageY - this.offsetTop;
     context.lineTo(mouse.x, mouse.y);
     context.stroke();
+    // console.log(context.stroke);
   }
   btnClearRef.removeAttribute("disabled");
 });
@@ -68,6 +75,8 @@ canvas.addEventListener("touchstart", function (e) {
   context.beginPath();
   context.strokeStyle = color;
   context.lineWidth = 2.0;
+  context.shadowBlur = 5;
+  context.shadowColor = "rgba(255, 252, 86, 0.745)";
   context.moveTo(touchPosition.x, touchPosition.y);
   btnClearRef.removeAttribute("disabled");
 }); //Начало касания
