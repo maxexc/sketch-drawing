@@ -9,16 +9,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="#" />
     <title>Drawing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div class="wrapper">
       <canvas width="4000" height="3000" id="canvas" class="canvas"></canvas>
 
+      <div class="notice js-notice">Push to draw</div>
       <div class="info">
         <div class="info__content">
           <button type="button" class="js-clear-btn">
-            Clear all:
+            Clear all: &nbsp
+            <!-- пробел/space &nbsp-->
             <img src="./img/icon-cross.svg" class="clearIcon" alt="clearBtn" />
           </button>
 

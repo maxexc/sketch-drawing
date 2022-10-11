@@ -9,6 +9,8 @@ function InitApp() {
 btnClearRef = document.querySelector(".js-clear-btn");
 btnClearRef.addEventListener("click", onClickLink);
 console.log(btnClearRef);
+removeNotice = document.querySelector(".js-notice");
+console.log(removeNotice);
 
 //Получение холста и его контекста
 const canvas = document.getElementById("canvas");
@@ -28,6 +30,7 @@ var color = "#fffc56";
 
 canvas.addEventListener("mousedown", function (e) {
   btnClearRef.removeAttribute("disabled");
+  removeNotice.classList.add("notice-opacity");
 
   mouse.x = e.pageX - this.offsetLeft;
   mouse.y = e.pageY - this.offsetTop;
@@ -79,6 +82,7 @@ canvas.addEventListener("touchstart", function (e) {
   context.shadowColor = "rgba(255, 252, 86, 0.745)";
   context.moveTo(touchPosition.x, touchPosition.y);
   btnClearRef.removeAttribute("disabled");
+  removeNotice.classList.add("notice-opacity");
 }); //Начало касания
 
 canvas.addEventListener("touchmove", function (e) {
