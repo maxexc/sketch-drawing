@@ -72,6 +72,7 @@ canvas.addEventListener("mouseup", function (e) {
 });
 
 canvas.addEventListener("touchstart", function (e) {
+  e.preventDefault();
   touchPosition.x = e.changedTouches[0].clientX - this.offsetLeft;
   touchPosition.y = e.changedTouches[0].clientY - this.offsetTop;
   draw = true;
@@ -86,6 +87,7 @@ canvas.addEventListener("touchstart", function (e) {
 }); //Начало касания
 
 canvas.addEventListener("touchmove", function (e) {
+  e.preventDefault();
   if (draw == true) {
     //Получаем новую позицию
     touchPosition.x = e.changedTouches[0].clientX - this.offsetLeft;
