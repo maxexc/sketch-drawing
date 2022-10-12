@@ -19,7 +19,7 @@ colorBtn.addEventListener("click", colorForTouch);
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d"); // context
 
-// меняем фон
+// меняем фон / change background
 
 changeBackGround = document.querySelector(".changeBack");
 changeBackGround.addEventListener("click", changeImg);
@@ -175,10 +175,3 @@ function onClickLink(e) {
 
 //   context.fillRect(x - weightHalf, y - weightHalf, weight, weight);
 // }
-
-// canvas.addEventListener("touchmove", function (e) {
-//   TouchMove(e);
-// }); //Движение пальцем по экрану
-// canvas.addEventListener("mousemove", function (e) {
-//   MouseMove(e);
-// });
