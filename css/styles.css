@@ -44,7 +44,7 @@ ul {
   padding-left: 0;
   list-style-type: none;
   display: flex;
-  gap: 4px;
+  gap: 3px;
   width: 40%;
   display: flex;
   align-items: center;
@@ -121,7 +121,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  gap: 6px;
+  gap: 5px;
 }
 
 button {
