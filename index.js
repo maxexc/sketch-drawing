@@ -25,20 +25,20 @@ changeBackGround = document.querySelector(".changeBack");
 changeBackGround.addEventListener("click", changeImg);
 
 var colorArray = [
-  "url('../img/t_23.jpg')",
-  "url('../img/t_49.png')",
-  "url('../img/modern.jpg')",
-  "url('../img/t_43.jpg')",
-  "url('../img/t_52.jpg')",
-  "url('../img/t_72.jpg')",
-  "url('../img/t_1.jpg')",
-  "url('../img/t_3.jpg')",
-  "url('../img/t_4.jpg')",
-  "url('../img/t_5.jpg')",
-  "url('../img/t_9.jpg')",
-  "url('../img/t_37.jpg')",
-  "url('../img/t_45.jpg')",
-  "url('../img/t_67.jpg')",
+  "url('./img/t_23.jpg')",
+  "url('./img/t_49.png')",
+  "url('./img/modern.jpg')",
+  "url('./img/t_43.jpg')",
+  "url('./img/t_52.jpg')",
+  "url('./img/t_72.jpg')",
+  "url('./img/t_1.jpg')",
+  "url('./img/t_3.jpg')",
+  "url('./img/t_4.jpg')",
+  "url('./img/t_5.jpg')",
+  "url('./img/t_9.jpg')",
+  "url('./img/t_37.jpg')",
+  "url('./img/t_45.jpg')",
+  "url('./img/t_67.jpg')",
 ];
 var i = 0;
 console.log(canvas.style.backgroundImage);
