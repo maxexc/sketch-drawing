@@ -25,10 +25,10 @@ changeBackGround = document.querySelector(".changeBack");
 changeBackGround.addEventListener("click", changeImg);
 
 var colorArray = [
-  "url('./img/t_23.jpg')",
   "url('./img/t_49.png')",
   "url('./img/modern.jpg')",
   "url('./img/t_43.jpg')",
+  "url('./img/t_23.jpg')",
   "url('./img/t_52.jpg')",
   "url('./img/t_72.jpg')",
   "url('./img/t_1.jpg')",
