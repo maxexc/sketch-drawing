@@ -11,6 +11,9 @@ btnClearRef.addEventListener("click", onClickLink);
 console.log(btnClearRef);
 removeNotice = document.querySelector(".js-notice");
 console.log(removeNotice);
+colorBtn = document.querySelector(".js-colorBtn-list");
+
+colorBtn.addEventListener("click", colorForTouch);
 
 //Получение холста и его контекста
 const canvas = document.getElementById("canvas");
@@ -27,6 +30,20 @@ var draw = false;
 var mouse = { x: 0, y: 0 };
 var touchPosition = { x: 0, y: 0 };
 var color = "#fffc56";
+var shadowColor = "rgba(255, 252, 86, 0.745)";
+
+function colorForTouch(e) {
+  console.log(e.target);
+  if (!e.target.classList.contains("colorBtn-list__item")) {
+    return;
+  }
+
+  const swatchEl = e.target;
+  color = swatchEl.dataset.hex;
+  shadowColor = swatchEl.dataset.rgb;
+  console.log(swatchEl.dataset.hex);
+  console.log(swatchEl.dataset.rgb);
+}
 
 canvas.addEventListener("mousedown", function (e) {
   btnClearRef.removeAttribute("disabled");
@@ -45,7 +62,7 @@ canvas.addEventListener("mousedown", function (e) {
 
   // console.log(context);
   context.shadowBlur = 5;
-  context.shadowColor = "rgba(255, 252, 86, 0.745)";
+  context.shadowColor = shadowColor;
   // color: rgba(233, 95, 95, 0.226);
 
   context.moveTo(mouse.x, mouse.y);
@@ -80,7 +97,7 @@ canvas.addEventListener("touchstart", function (e) {
   context.strokeStyle = color;
   context.lineWidth = 2.0;
   context.shadowBlur = 5;
-  context.shadowColor = "rgba(255, 252, 86, 0.745)";
+  context.shadowColor = shadowColor;
   context.moveTo(touchPosition.x, touchPosition.y);
   btnClearRef.removeAttribute("disabled");
   removeNotice.classList.add("notice-opacity");
