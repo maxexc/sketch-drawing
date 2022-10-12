@@ -19,12 +19,38 @@ colorBtn.addEventListener("click", colorForTouch);
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d"); // context
 
-// canvas.addEventListener("touchmove", function (e) {
-//   TouchMove(e);
-// }); //Движение пальцем по экрану
-// canvas.addEventListener("mousemove", function (e) {
-//   MouseMove(e);
-// });
+// меняем фон
+
+changeBackGround = document.querySelector(".changeBack");
+changeBackGround.addEventListener("click", changeImg);
+
+var colorArray = [
+  "url('../img/t_23.jpg')",
+  "url('../img/t_49.png')",
+  "url('../img/modern.jpg')",
+  "url('../img/t_43.jpg')",
+  "url('../img/t_52.jpg')",
+  "url('../img/t_72.jpg')",
+  "url('../img/t_1.jpg')",
+  "url('../img/t_3.jpg')",
+  "url('../img/t_4.jpg')",
+  "url('../img/t_5.jpg')",
+  "url('../img/t_9.jpg')",
+  "url('../img/t_37.jpg')",
+  "url('../img/t_45.jpg')",
+  "url('../img/t_67.jpg')",
+];
+var i = 0;
+console.log(canvas.style.backgroundImage);
+
+function changeImg() {
+  canvas.style.backgroundImage = colorArray[i];
+  // document.body.style.backgroundImage = "url('t.png')"; //Если файл в корне, если путь другой, укажите путь перед t.png
+  i++;
+  if (i >= colorArray.length) {
+    i = 0;
+  }
+}
 
 var draw = false;
 var mouse = { x: 0, y: 0 };
@@ -149,3 +175,10 @@ function onClickLink(e) {
 
 //   context.fillRect(x - weightHalf, y - weightHalf, weight, weight);
 // }
+
+// canvas.addEventListener("touchmove", function (e) {
+//   TouchMove(e);
+// }); //Движение пальцем по экрану
+// canvas.addEventListener("mousemove", function (e) {
+//   MouseMove(e);
+// });
