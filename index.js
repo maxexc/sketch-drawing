@@ -74,6 +74,7 @@ function colorForTouch(e) {
 canvas.addEventListener("mousedown", function (e) {
   btnClearRef.removeAttribute("disabled");
   removeNotice.classList.add("notice-opacity");
+  setTimeout(() => removeNotice.classList.add("notice-hidden"), 1000);
 
   mouse.x = e.pageX - this.offsetLeft;
   mouse.y = e.pageY - this.offsetTop;
@@ -127,6 +128,7 @@ canvas.addEventListener("touchstart", function (e) {
   context.moveTo(touchPosition.x, touchPosition.y);
   btnClearRef.removeAttribute("disabled");
   removeNotice.classList.add("notice-opacity");
+  setTimeout(() => removeNotice.classList.add("notice-hidden"), 1000);
 }); //Начало касания
 
 canvas.addEventListener("touchmove", function (e) {
