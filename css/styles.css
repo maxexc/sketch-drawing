@@ -106,6 +106,9 @@ ul {
   /* outline: 1px solid pink; */
   background-color: rgba(240, 255, 210, 0.007);
   background-image: url("../img/t_23.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   /* background-size: cover; */
   /* background-repeat: no-repeat; */
 }

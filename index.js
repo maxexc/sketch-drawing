@@ -25,7 +25,6 @@ changeBackGround = document.querySelector(".changeBack");
 changeBackGround.addEventListener("click", changeImg);
 
 var colorArray = [
-  "url('./img/t_49.png')",
   "url('./img/modern.jpg')",
   "url('./img/t_43.jpg')",
   "url('./img/t_23.jpg')",
@@ -39,6 +38,7 @@ var colorArray = [
   "url('./img/t_37.jpg')",
   "url('./img/t_45.jpg')",
   "url('./img/t_67.jpg')",
+  "url('./img/t_49.png')",
 ];
 var i = 0;
 console.log(canvas.style.backgroundImage);
